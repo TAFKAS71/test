@@ -57,7 +57,7 @@ NSInteger rigaSelezionata =0;
     self.myWindow = myWindow2;
     [self.myWindow setDelegate:(id)self];
     NSButton *myButton = [[NSButton alloc] initWithFrame:NSMakeRect(100, 100, 120, 50)];
-    [myButton setTitle:@"Fottiti"];
+    [myButton setTitle:@"Green"];
     [myButton setButtonType:NSMomentaryLightButton]; //Set what type button You want
     [myButton setBezelStyle:NSRoundedBezelStyle]; //Set what style You want
     [myButton setAction:@selector(changeColor)];
@@ -68,7 +68,6 @@ NSInteger rigaSelezionata =0;
 }
 
 - (void)windowWillClose:(NSNotification *)notification{
-    NSLog(@"Po");
     myWindow2 = nil;
     
 }
