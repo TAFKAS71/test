@@ -56,10 +56,10 @@ NSInteger rigaSelezionata =0;
     [myWindow2 setReleasedWhenClosed:YES];
     self.myWindow = myWindow2;
     [self.myWindow setDelegate:(id)self];
-    NSButton *myButton = [[NSButton alloc] initWithFrame:NSMakeRect(100, 100, 120, 50)];
+    NSButton *myButton = [[NSButton alloc] initWithFrame:NSMakeRect(100, 100, 130, 50)];
     [myButton setTitle:@"Green"];
-    [myButton setButtonType:NSMomentaryLightButton]; //Set what type button You want
-    [myButton setBezelStyle:NSRoundedBezelStyle]; //Set what style You want
+    [myButton setButtonType:NSMomentaryLightButton];
+    [myButton setBezelStyle:NSRoundedBezelStyle];
     [myButton setAction:@selector(changeColor)];
     [[self.myWindow contentView] addSubview:myButton];
     [self.myWindow makeKeyAndOrderFront:NSApp];
