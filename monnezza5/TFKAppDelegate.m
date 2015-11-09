@@ -51,9 +51,9 @@ NSInteger rigaSelezionata =0;
     NSLog(@"%@", menu);
 }
 - (IBAction)openWindow:(id)sender {
-    
+    self.myWindow = nil;
    myWindow2 = [[NSWindow alloc] initWithContentRect:NSMakeRect(50, 50, 500, 200) styleMask:(NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask | NSClosableWindowMask) backing:NSBackingStoreBuffered defer:NO];
-    [myWindow2 setReleasedWhenClosed:YES];
+    [myWindow2 setReleasedWhenClosed:NO];
     self.myWindow = myWindow2;
     [self.myWindow setDelegate:(id)self];
     NSButton *myButton = [[NSButton alloc] initWithFrame:NSMakeRect(100, 100, 130, 50)];
@@ -68,7 +68,17 @@ NSInteger rigaSelezionata =0;
 }
 
 - (void)windowWillClose:(NSNotification *)notification{
-    myWindow2 = nil;
     
+        myWindow2 = nil;
+}
+
+- (void)windowWillMiniaturize:(NSNotification *)notification{
+    
+    NSLog(@"miniaturized");
+}
+
+- (void)windowDidDeminiaturize:(NSNotification *)notification{
+    
+    NSLog(@"deminiaturized");
 }
 @end
