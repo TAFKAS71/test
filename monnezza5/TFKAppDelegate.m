@@ -44,14 +44,14 @@ NSInteger rigaSelezionata =0;
 
 
 - (void) menuWillOpen:(NSMenu *)menu{
-    if ([[menu title] isEqualToString:@"Show Fonts"]) {
-        NSLog(@"%@", menu);
+    if ([self.colorApp.color isEqualTo:[NSColor greenColor]]) {
+        NSLog(@"green");
     }
-    
-    NSLog(@"%@", menu);
+    else {
+         NSLog(@"altro colore");
+    }
 }
 - (IBAction)openWindow:(id)sender {
-    self.myWindow = nil;
    myWindow2 = [[NSWindow alloc] initWithContentRect:NSMakeRect(50, 50, 500, 200) styleMask:(NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask | NSClosableWindowMask) backing:NSBackingStoreBuffered defer:NO];
     [myWindow2 setReleasedWhenClosed:NO];
     self.myWindow = myWindow2;
